@@ -16,7 +16,7 @@ namespace BookingTests
         {
             //Arrange
             ReservationRequest reservationRequest = InputParser.BuildReservationRequest(input);
-            IList<Hotel> defaultHotels = DefaultHotels.GetDefaultHotels();
+            IList<Hotel> defaultHotels = HotelFactory.GetHotelFactory();
 
             //Act
             var result = Reservation
