@@ -1,12 +1,11 @@
 using System.Collections.Generic;
-using Booking.Reservations;
-using Booking.Hotels;
-using Utils;
+using BookingDomain;
+using BookingDomain.Hotels;
 using Xunit;
 
-namespace BookingTests
+namespace BookingDomainTests
 {
-    public class ReservationTest
+    public class BookingTest
     {
         [Theory]
         [InlineData("Regular: 16Mar2009(mon), 17Mar2009(tues), 18Mar2009(wed)", "Lakewood")]
@@ -15,12 +14,12 @@ namespace BookingTests
         public void GetCheapestHotel_ValidInput_ReturnCheapestHotelName(string input, string expected)
         {
             //Arrange
-            ReservationRequest reservationRequest = InputParser.BuildReservationRequest(input);
+            BookingRequest bookingRequest = BookingService.BuildBookingRequest(input);
             IList<Hotel> defaultHotels = HotelFactory.GetHotelFactory();
 
             //Act
-            var result = Reservation
-                .GetCheapestHotel(reservationRequest, defaultHotels)
+            var result = Booking
+                .GetCheapestHotel(bookingRequest, defaultHotels)
                 .Hotel
                 .Name;
 
