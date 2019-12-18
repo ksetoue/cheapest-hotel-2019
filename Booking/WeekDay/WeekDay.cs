@@ -1,4 +1,4 @@
-namespace Booking.Dates
+namespace BookingDomain.Dates
 {
     /// <summary>
     /// enum that describes each week day
