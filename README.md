@@ -103,7 +103,7 @@ To run the project, dowload the project and on the root directory run:
 
 ```
 $ cd ApplicationCore
-$ dotnet restore ApplicationCore.csproj
+$ dotnet restore
 $ dotnet build
 $ dotnet run 
 ```
@@ -112,7 +112,7 @@ To run tests, on the root directory run:
 
 ```
 $ cd BookingTest
-$ dotnet restore BookingTest.csproj
+$ dotnet restore
 $ dotnet test
 
 ```
